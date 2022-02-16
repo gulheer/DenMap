@@ -90,3 +90,11 @@ Wheels for naturalneighbor and concave_hull that have been compiled using VS Stu
         pip install .
         ```
         If all goes well, it should compile and install without issue. You may have to install the package 'wheel'.
+
+# References
+
+* For feature extraction: Nenchev, B., Strickland, J., Tassenberg, K., Perry, S., Gill, S. and Dong, H., 2020. Automatic Recognition of Dendritic Solidification Structures: DenMap. Journal of Imaging, 6(4), p.19.
+
+* For GUI/automation: Tassenberg, K., Nenchev, B., Strickland, J., Perry, S. and Weston, D., 2020. DenMap Single Crystal Solidification Structure Feature Extraction: Automation and Application, Materials Characterization.
+
+* For characterisation: Strickland, J., Nenchev, B., Perry, S., Tassenberg, K., Gill, S., Panwisawas, C., Dong, H., D'Souza, N. and Irwin, S., 2020. On the nature of hexagonality within the solidification structure of single crystal alloys: Mechanisms and applications. Acta Materialia, 200, pp.417-431.
