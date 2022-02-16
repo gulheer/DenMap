@@ -3,7 +3,6 @@ import cv2, imutils, psutil, skimage.measure
 from scipy.ndimage import gaussian_filter1d, gaussian_filter
 from scipy.spatial.distance import cdist
 from scipy.optimize import minimize_scalar, minimize
-#from scipy.fftpack import ifft2, fft2, fftshift, ifftshift
 from itertools import groupby
 from operator import itemgetter
 import multiprocessing as mp
@@ -847,47 +846,3 @@ def width_auto_process(pool,image):
 	time_taken = time.time()-time_start
 	print("Time to process image: "+str(time_taken))
 	return image,np.array(p_centres)
-
-if __name__ == '__main__':
-	import time
-	import matplotlib.pyplot as plt
-	import alphashape, itertools
-	from scipy.spatial import Delaunay
-	#IMG_NAME = "D:\A6-edit.tif"
-	IMG_NAME = "..\image_001.tif"
-	#IMG_NAME = "D:\B10-edit.tif"
-	#IMG_NAME = "D:\B7-edit.tif"
-	cpu_count = mp.cpu_count()
-	pool = mp.Pool(processes=cpu_count-1)
-	print("Loading image.")
-	image = cv2.imread(IMG_NAME,0)
-	small_size = min(image.shape[0],image.shape[1])
-	min_res = np.array(1024/small_size)
-	scale=5
-	if (min_res > 1):
-		scale = np.round(min_res).astype(int)
-		image = cv2.resize(image,((image.shape[1]*scale),(image.shape[0]*scale)),interpolation = cv2.INTER_AREA)
-	
-	#t_s = time.time()
-	#r_in = calculate_r_in(image)
-	#t_e = time.time()
-	#print(t_e-t_s)
-	#assert False, "Stop"
-	main_image,p_centres = width_auto_process(pool,image)
-	pool.close()
-	
-	plt.imshow(main_image, cmap='gray', vmin=0, vmax=255)
-	plt.scatter(p_centres[:,0],p_centres[:,1],color="red")
-	plt.show()
-
-
-def test_wid_times(image,cor,thres):
-	t1_s = time.time()
-	for i in range(100):
-		width_find_centres(image,cor,0.88)
-	t1_e = time.time()
-	t2_s = time.time()
-	for i in range(100):
-		width_find_centres_old(image,cor,0.88)
-	t2_e = time.time()
-	print(t1_e-t1_s,"-",t2_e-t2_s)
