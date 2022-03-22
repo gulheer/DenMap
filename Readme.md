@@ -37,12 +37,13 @@ python main.py
 * Scipy
 * Matplotlib
 * Scikit-image
-* Reikna
-    *Note that PyOpenCL and PyCUDA need to be installed for Reikna to be able to use CUDA/OpenCL
+* Reikna*
 * Imutils
 * OpenCV (cv2)
 * Naturalneighbor ([Github](https://github.com/innolitics/natural-neighbor-interpolation)/[PyPi](https://pypi.org/project/naturalneighbor/))
 * Concave_hull ([Github](https://github.com/Geodan/concave-hull))
+
+*Note that PyOpenCL and PyCUDA need to be installed for Reikna to be able to use CUDA/OpenCL
 
 You must have the relevant compiler ([Windows](https://wiki.python.org/moin/WindowsCompilers)) installed to install Naturalneighbor and Concave_hull. For Windows with Python 3.5+, I recommend Visual C++ v14.0+/Visual Studio 2017+.
 
