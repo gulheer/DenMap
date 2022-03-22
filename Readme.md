@@ -38,6 +38,7 @@ python main.py
 * Matplotlib
 * Scikit-image
 * Reikna
+    *Note that PyOpenCL and PyCUDA need to be installed for Reikna to be able to use CUDA/OpenCL
 * Imutils
 * OpenCV (cv2)
 * Naturalneighbor ([Github](https://github.com/innolitics/natural-neighbor-interpolation)/[PyPi](https://pypi.org/project/naturalneighbor/))
